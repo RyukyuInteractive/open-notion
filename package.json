@@ -1,19 +1,48 @@
 {
-  "name": "notion-tools",
-  "module": "index.ts",
+  "name": "open-notion",
+  "version": "0.1.0",
+  "description": "Notion と Markdown の双方向変換ユーティリティライブラリ",
+  "author": "RyukyuInteractive",
+  "license": "MIT",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "format": "biome check . --fix --unsafe",
     "init": "bun run .instructions/build.ts",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "build": "bunx --bun tsc -p tsconfig.build.json",
+    "prepublishOnly": "bun run build"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@types/bun": "latest",
+    "@types/marked": "^6.0.0",
     "typescript": "^5"
   },
   "dependencies": {
     "@notionhq/client": "^2.3.0",
     "marked": "^15.0.8"
+  },
+  "keywords": [
+    "notion",
+    "markdown",
+    "converter",
+    "api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RyukyuInteractive/open-notion.git"
   }
 }

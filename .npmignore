@@ -1,0 +1,18 @@
+# ソースファイル
+lib/
+samples/
+debug/
+
+# 設定ファイル
+.editorconfig
+.vscode/
+.github/
+.instructions/
+biome.json
+bun.lock
+tsconfig.json
+tsconfig.build.json
+
+# その他
+.git/
+.gitignore
